@@ -48,27 +48,27 @@ export default function FAQ() {
     <div className="min-h-screen bg-white font-['Nunito',sans-serif]">
       <Header />
 
-      <section className="py-20 px-8 bg-gradient-to-br from-[#c7f2a4] via-[#bae6fd] to-[#e9d5ff] relative overflow-hidden">
+      <section className="py-12 md:py-20 px-4 md:px-8 bg-gradient-to-br from-[#c7f2a4] via-[#bae6fd] to-[#e9d5ff] relative overflow-hidden">
         <HeroBg />
         <div className="max-w-[1100px] mx-auto text-center relative z-10">
-          <h1 className="font-['Fredoka_One',cursive] text-[3rem] text-[#3B0764] mb-6">
+          <h1 className="font-['Fredoka_One',cursive] text-[2.2rem] md:text-[3rem] text-[#3B0764] mb-4 md:mb-6 leading-tight">
             Preguntas Frecuentes ❓
           </h1>
-          <p className="text-[1.1rem] text-gray-700 font-semibold max-w-[700px] mx-auto leading-relaxed">
+          <p className="text-[1rem] md:text-[1.1rem] text-gray-700 font-semibold max-w-[700px] mx-auto leading-relaxed px-2 md:px-0">
             Encuentra respuestas a las dudas más comunes sobre LETRASAURIO.
           </p>
         </div>
       </section>
 
-      <section className="py-16 px-8 bg-white relative overflow-hidden">
+      <section className="py-12 md:py-16 px-4 md:px-8 bg-white relative overflow-hidden">
         <LettersBg />
-        <div className="max-w-[900px] mx-auto space-y-12 relative z-10">
+        <div className="max-w-[900px] mx-auto space-y-8 md:space-y-12 relative z-10">
           {faqs.map((category, categoryIndex) => (
             <div key={categoryIndex}>
-              <h2 className="font-['Fredoka_One',cursive] text-[1.8rem] text-[#6B21A8] mb-6">
+              <h2 className="font-['Fredoka_One',cursive] text-[1.5rem] md:text-[1.8rem] text-[#6B21A8] mb-4 md:mb-6">
                 {category.category}
               </h2>
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {category.questions.map((faq, faqIndex) => {
                   const globalIndex = categoryIndex * 100 + faqIndex;
                   const isOpen = openIndex === globalIndex;
@@ -76,13 +76,13 @@ export default function FAQ() {
                     <div key={faqIndex} className="bg-[#FAF7F0] rounded-2xl overflow-hidden shadow-[0_2px_12px_rgba(107,33,168,0.06)] hover:shadow-[0_4px_20px_rgba(107,33,168,0.1)] transition-shadow">
                       <button
                         onClick={() => setOpenIndex(isOpen ? null : globalIndex)}
-                        className="w-full flex items-center justify-between p-6 text-left hover:bg-[#f5f0e8] transition-colors"
+                        className="w-full flex items-center justify-between p-5 md:p-6 text-left hover:bg-[#f5f0e8] transition-colors"
                       >
-                        <span className="font-bold text-gray-800 pr-4 text-[1.05rem]">{faq.q}</span>
-                        <span className={`text-[1.5rem] text-[#6B21A8] transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}>▼</span>
+                        <span className="font-bold text-gray-800 pr-4 text-[0.95rem] md:text-[1.05rem] leading-snug">{faq.q}</span>
+                        <span className={`text-[1.2rem] md:text-[1.5rem] text-[#6B21A8] transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}>▼</span>
                       </button>
                       <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[500px]' : 'max-h-0'}`}>
-                        <div className="px-6 pb-6 text-gray-700 font-semibold leading-relaxed">{faq.a}</div>
+                        <div className="px-5 pb-5 md:px-6 md:pb-6 text-gray-700 font-semibold leading-relaxed text-[0.9rem] md:text-[0.95rem]">{faq.a}</div>
                       </div>
                     </div>
                   );
@@ -93,13 +93,13 @@ export default function FAQ() {
         </div>
       </section>
 
-      <section className="py-16 px-8 bg-[#FAF7F0]">
+      <section className="py-12 md:py-16 px-4 md:px-8 bg-[#FAF7F0]">
         <div className="max-w-[700px] mx-auto text-center">
-          <h2 className="font-['Fredoka_One',cursive] text-[2rem] text-[#3B0764] mb-4">¿No encontraste tu respuesta? 🤔</h2>
-          <p className="text-gray-700 font-semibold mb-8 leading-relaxed">
+          <h2 className="font-['Fredoka_One',cursive] text-[1.8rem] md:text-[2rem] text-[#3B0764] mb-4 leading-tight">¿No encontraste tu respuesta? 🤔</h2>
+          <p className="text-gray-700 font-semibold mb-6 md:mb-8 leading-relaxed text-[0.95rem] md:text-[1rem] px-2 md:px-0">
             Nuestro equipo está listo para ayudarte. Envíanos tu pregunta y te responderemos lo antes posible.
           </p>
-          <a href="/contacto" className="inline-block bg-[#6B21A8] hover:bg-[#7C3AED] text-white font-['Fredoka_One',cursive] text-[1.1rem] px-8 py-4 rounded-[40px] shadow-[0_6px_20px_rgba(107,33,168,0.35)] transition-all no-underline">
+          <a href="/contacto" className="inline-block bg-[#6B21A8] hover:bg-[#7C3AED] text-white font-['Fredoka_One',cursive] text-[1rem] md:text-[1.1rem] px-6 py-3 md:px-8 md:py-4 rounded-[40px] shadow-[0_6px_20px_rgba(107,33,168,0.35)] transition-all no-underline w-full sm:w-auto">
             Contáctanos 📧
           </a>
         </div>

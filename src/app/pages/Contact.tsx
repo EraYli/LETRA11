@@ -47,109 +47,109 @@ export default function Contact() {
     <div className="min-h-screen bg-white font-['Nunito',sans-serif]">
       <Header />
 
-      <section className="py-20 px-8 bg-gradient-to-br from-[#c7f2a4] via-[#bae6fd] to-[#e9d5ff] relative overflow-hidden">
+      <section className="py-12 md:py-20 px-4 md:px-8 bg-gradient-to-br from-[#c7f2a4] via-[#bae6fd] to-[#e9d5ff] relative overflow-hidden">
         <HeroBg />
         <div className="max-w-[1100px] mx-auto text-center relative z-10">
-          <h1 className="font-['Fredoka_One',cursive] text-[3rem] text-[#3B0764] mb-6">
+          <h1 className="font-['Fredoka_One',cursive] text-[2.2rem] md:text-[3rem] text-[#3B0764] mb-4 md:mb-6 leading-tight">
             Contáctanos 📧
           </h1>
-          <p className="text-[1.1rem] text-gray-700 font-semibold max-w-[700px] mx-auto leading-relaxed">
+          <p className="text-[1rem] md:text-[1.1rem] text-gray-700 font-semibold max-w-[700px] mx-auto leading-relaxed px-2 md:px-0">
             ¿Tienes preguntas o sugerencias? Estamos aquí para ayudarte.
           </p>
         </div>
       </section>
 
-      <section className="py-16 px-8 bg-white relative overflow-hidden">
+      <section className="py-12 md:py-16 px-4 md:px-8 bg-white relative overflow-hidden">
         <LettersBg />
-        <div className="max-w-[1000px] mx-auto grid md:grid-cols-2 gap-12 relative z-10">
-          <div className="bg-[#FAF7F0] rounded-[24px] p-8 shadow-[0_4px_20px_rgba(107,33,168,0.08)]">
-            <h2 className="font-['Fredoka_One',cursive] text-[1.8rem] text-[#6B21A8] mb-6">
+        <div className="max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative z-10">
+          <div className="bg-[#FAF7F0] rounded-[24px] p-6 md:p-8 shadow-[0_4px_20px_rgba(107,33,168,0.08)]">
+            <h2 className="font-['Fredoka_One',cursive] text-[1.5rem] md:text-[1.8rem] text-[#6B21A8] mb-4 md:mb-6">
               Envíanos un mensaje
             </h2>
 
             {submitted && (
-              <div className="bg-[#16A34A] text-white p-4 rounded-2xl mb-6 font-semibold">
+              <div className="bg-[#16A34A] text-white p-4 rounded-2xl mb-4 md:mb-6 font-semibold text-[0.95rem] md:text-[1rem]">
                 ✅ ¡Mensaje enviado con éxito! Te responderemos pronto.
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
               <div>
-                <label className="block font-bold text-gray-700 mb-2">Nombre completo *</label>
+                <label className="block font-bold text-gray-700 mb-1.5 md:mb-2 text-[0.95rem] md:text-[1rem]">Nombre completo *</label>
                 <input type="text" name="name" value={formData.name} onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-xl border-2 ${errors.name ? 'border-red-500' : 'border-gray-300'} focus:border-[#6B21A8] focus:outline-none font-semibold transition-colors`}
+                  className={`w-full px-4 py-3 rounded-xl border-2 ${errors.name ? 'border-red-500' : 'border-gray-300'} focus:border-[#6B21A8] focus:outline-none font-semibold transition-colors text-[0.95rem] md:text-[1rem]`}
                   placeholder="Tu nombre" />
-                {errors.name && <p className="text-red-500 text-[0.85rem] mt-1 font-semibold">⚠️ {errors.name}</p>}
+                {errors.name && <p className="text-red-500 text-[0.8rem] md:text-[0.85rem] mt-1 font-semibold">⚠️ {errors.name}</p>}
               </div>
               <div>
-                <label className="block font-bold text-gray-700 mb-2">Correo electrónico *</label>
+                <label className="block font-bold text-gray-700 mb-1.5 md:mb-2 text-[0.95rem] md:text-[1rem]">Correo electrónico *</label>
                 <input type="email" name="email" value={formData.email} onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-xl border-2 ${errors.email ? 'border-red-500' : 'border-gray-300'} focus:border-[#6B21A8] focus:outline-none font-semibold transition-colors`}
+                  className={`w-full px-4 py-3 rounded-xl border-2 ${errors.email ? 'border-red-500' : 'border-gray-300'} focus:border-[#6B21A8] focus:outline-none font-semibold transition-colors text-[0.95rem] md:text-[1rem]`}
                   placeholder="tu@email.com" />
-                {errors.email && <p className="text-red-500 text-[0.85rem] mt-1 font-semibold">⚠️ {errors.email}</p>}
+                {errors.email && <p className="text-red-500 text-[0.8rem] md:text-[0.85rem] mt-1 font-semibold">⚠️ {errors.email}</p>}
               </div>
               <div>
-                <label className="block font-bold text-gray-700 mb-2">Asunto *</label>
+                <label className="block font-bold text-gray-700 mb-1.5 md:mb-2 text-[0.95rem] md:text-[1rem]">Asunto *</label>
                 <select name="subject" value={formData.subject} onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-xl border-2 ${errors.subject ? 'border-red-500' : 'border-gray-300'} focus:border-[#6B21A8] focus:outline-none font-semibold transition-colors`}>
+                  className={`w-full px-4 py-3 rounded-xl border-2 ${errors.subject ? 'border-red-500' : 'border-gray-300'} focus:border-[#6B21A8] focus:outline-none font-semibold transition-colors text-[0.95rem] md:text-[1rem] bg-white`}>
                   <option value="">Selecciona un asunto</option>
                   <option value="soporte">Soporte técnico</option>
                   <option value="sugerencia">Sugerencia</option>
                   <option value="colaboracion">Colaboración educativa</option>
                   <option value="otro">Otro</option>
                 </select>
-                {errors.subject && <p className="text-red-500 text-[0.85rem] mt-1 font-semibold">⚠️ {errors.subject}</p>}
+                {errors.subject && <p className="text-red-500 text-[0.8rem] md:text-[0.85rem] mt-1 font-semibold">⚠️ {errors.subject}</p>}
               </div>
               <div>
-                <label className="block font-bold text-gray-700 mb-2">Mensaje *</label>
-                <textarea name="message" value={formData.message} onChange={handleChange} rows={5}
-                  className={`w-full px-4 py-3 rounded-xl border-2 ${errors.message ? 'border-red-500' : 'border-gray-300'} focus:border-[#6B21A8] focus:outline-none font-semibold transition-colors resize-none`}
+                <label className="block font-bold text-gray-700 mb-1.5 md:mb-2 text-[0.95rem] md:text-[1rem]">Mensaje *</label>
+                <textarea name="message" value={formData.message} onChange={handleChange} rows={4}
+                  className={`w-full px-4 py-3 rounded-xl border-2 ${errors.message ? 'border-red-500' : 'border-gray-300'} focus:border-[#6B21A8] focus:outline-none font-semibold transition-colors resize-none text-[0.95rem] md:text-[1rem]`}
                   placeholder="Escribe tu mensaje aquí..." />
-                {errors.message && <p className="text-red-500 text-[0.85rem] mt-1 font-semibold">⚠️ {errors.message}</p>}
+                {errors.message && <p className="text-red-500 text-[0.8rem] md:text-[0.85rem] mt-1 font-semibold">⚠️ {errors.message}</p>}
               </div>
               <button type="submit"
-                className="w-full bg-[#6B21A8] hover:bg-[#7C3AED] text-white font-['Fredoka_One',cursive] text-[1.1rem] py-4 rounded-xl transition-all shadow-[0_4px_15px_rgba(107,33,168,0.3)]">
+                className="w-full bg-[#6B21A8] hover:bg-[#7C3AED] text-white font-['Fredoka_One',cursive] text-[1rem] md:text-[1.1rem] py-3.5 md:py-4 rounded-xl transition-all shadow-[0_4px_15px_rgba(107,33,168,0.3)]">
                 Enviar mensaje 📤
               </button>
             </form>
           </div>
 
-          <div className="space-y-6">
-            <div className="bg-gradient-to-br from-[#7C3AED] to-[#A855F7] text-white rounded-[24px] p-8 shadow-[0_4px_20px_rgba(107,33,168,0.15)]">
-              <h3 className="font-['Fredoka_One',cursive] text-[1.5rem] mb-4">📍 Información de Contacto</h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <span className="text-[1.5rem]">✉️</span>
+          <div className="space-y-6 md:space-y-8">
+            <div className="bg-gradient-to-br from-[#7C3AED] to-[#A855F7] text-white rounded-[24px] p-6 md:p-8 shadow-[0_4px_20px_rgba(107,33,168,0.15)]">
+              <h3 className="font-['Fredoka_One',cursive] text-[1.3rem] md:text-[1.5rem] mb-4 md:mb-6">📍 Información de Contacto</h3>
+              <div className="space-y-4 md:space-y-5">
+                <div className="flex items-start gap-3 md:gap-4">
+                  <span className="text-[1.3rem] md:text-[1.5rem]">✉️</span>
                   <div>
-                    <p className="font-bold mb-1">Correo electrónico</p>
-                    <p className="opacity-90">letrasaurio@ujat.mx</p>
+                    <p className="font-bold mb-0.5 md:mb-1 text-[0.95rem] md:text-[1rem]">Correo electrónico</p>
+                    <p className="opacity-90 text-[0.9rem] md:text-[1rem]">letrasaurio@ujat.mx</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-[1.5rem]">📍</span>
+                <div className="flex items-start gap-3 md:gap-4">
+                  <span className="text-[1.3rem] md:text-[1.5rem]">📍</span>
                   <div>
-                    <p className="font-bold mb-1">Ubicación</p>
-                    <p className="opacity-90">Cunduacán, Tabasco, México</p>
-                    <p className="opacity-90 text-[0.9rem] mt-1">UJAT - DACTI</p>
+                    <p className="font-bold mb-0.5 md:mb-1 text-[0.95rem] md:text-[1rem]">Ubicación</p>
+                    <p className="opacity-90 text-[0.9rem] md:text-[1rem]">Cunduacán, Tabasco, México</p>
+                    <p className="opacity-90 text-[0.85rem] md:text-[0.9rem] mt-1">UJAT - DACTI</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-[1.5rem]">⏰</span>
+                <div className="flex items-start gap-3 md:gap-4">
+                  <span className="text-[1.3rem] md:text-[1.5rem]">⏰</span>
                   <div>
-                    <p className="font-bold mb-1">Horario de atención</p>
-                    <p className="opacity-90">Lunes a Viernes</p>
-                    <p className="opacity-90">9:00 AM - 5:00 PM</p>
+                    <p className="font-bold mb-0.5 md:mb-1 text-[0.95rem] md:text-[1rem]">Horario de atención</p>
+                    <p className="opacity-90 text-[0.9rem] md:text-[1rem]">Lunes a Viernes</p>
+                    <p className="opacity-90 text-[0.9rem] md:text-[1rem]">9:00 AM - 5:00 PM</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-[#FAF7F0] rounded-[24px] p-8 shadow-[0_4px_20px_rgba(107,33,168,0.08)]">
-              <h3 className="font-['Fredoka_One',cursive] text-[1.5rem] text-[#16A34A] mb-4">🤝 Síguenos en redes</h3>
-              <div className="flex gap-3">
-                <a href="#" className="w-12 h-12 bg-[#1877F2] rounded-full flex items-center justify-center text-white text-[1.2rem] hover:scale-110 transition-transform">f</a>
-                <a href="#" className="w-12 h-12 bg-gradient-to-br from-[#f09433] via-[#dc2743] to-[#bc1888] rounded-full flex items-center justify-center text-[1.2rem] hover:scale-110 transition-transform">📷</a>
-                <a href="#" className="w-12 h-12 bg-[#FF0000] rounded-full flex items-center justify-center text-white text-[1.2rem] hover:scale-110 transition-transform">▶</a>
+            <div className="bg-[#FAF7F0] rounded-[24px] p-6 md:p-8 shadow-[0_4px_20px_rgba(107,33,168,0.08)]">
+              <h3 className="font-['Fredoka_One',cursive] text-[1.3rem] md:text-[1.5rem] text-[#16A34A] mb-4 md:mb-5">🤝 Síguenos en redes</h3>
+              <div className="flex gap-3 md:gap-4">
+                <a href="#" className="w-10 h-10 md:w-12 md:h-12 bg-[#1877F2] rounded-full flex items-center justify-center text-white text-[1rem] md:text-[1.2rem] hover:scale-110 transition-transform">f</a>
+                <a href="#" className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#f09433] via-[#dc2743] to-[#bc1888] rounded-full flex items-center justify-center text-[1rem] md:text-[1.2rem] hover:scale-110 transition-transform">📷</a>
+                <a href="#" className="w-10 h-10 md:w-12 md:h-12 bg-[#FF0000] rounded-full flex items-center justify-center text-white text-[1rem] md:text-[1.2rem] hover:scale-110 transition-transform">▶</a>
               </div>
             </div>
           </div>
